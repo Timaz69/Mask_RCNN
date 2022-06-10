@@ -2155,7 +2155,7 @@ class MaskRCNN():
         metrics. Then calls the Keras compile() function.
         """
         # Optimizer object
-	opti = self.config.OPTIMIZER
+	opti=self.config.OPTIMIZER
         optimizer = keras.optimizers.opti(
             lr=learning_rate, momentum=momentum,
             clipnorm=self.config.GRADIENT_CLIP_NORM)
