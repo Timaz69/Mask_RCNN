@@ -2163,6 +2163,7 @@ class MaskRCNN():
 		optimizer = keras.optimizers.Adam(
 		    lr=learning_rate,
 		    clipnorm=self.config.GRADIENT_CLIP_NORM)
+	
         # Add Losses
         # First, clear previously set losses to avoid duplication
         self.keras_model._losses = []
