@@ -2156,6 +2156,7 @@ class MaskRCNN():
         """
         # Optimizer object
 	if self.config.OPTIMIZER == "SGD":
+		print("Q")
 		optimizer = keras.optimizers.SGD(
 		    lr=learning_rate, momentum=momentum,
 		    clipnorm=self.config.GRADIENT_CLIP_NORM)
