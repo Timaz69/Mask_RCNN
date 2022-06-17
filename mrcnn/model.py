@@ -2155,8 +2155,13 @@ class MaskRCNN():
         metrics. Then calls the Keras compile() function.
         """
         # Optimizer object
+	if self.config.OPTIMIZER =="SGD":
+		optimizer = keras.optimizers.SGD(learning_rate=learning_rate,momentum=momentum,
+						 clipnorm=self.config.GRADIENT_CLIP_NORM)
+	elif self.config.OPTIMIZER == "ADAM":
+		optimizer = keras.optimizers.Adam(learning_rate=learning_rate,
+						  clipnorm=self.config.GRADIENT_CLIP_NORM)
 	if self.config.OPTIMIZER == "SGD":
-		print("Q")
 		optimizer = keras.optimizers.SGD(
 		    lr=learning_rate, momentum=momentum,
 		    clipnorm=self.config.GRADIENT_CLIP_NORM)
